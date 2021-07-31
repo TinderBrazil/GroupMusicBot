@@ -43,7 +43,7 @@ async def gstart(_, message: Message):
             [
                 [
                     InlineKeyboardButton(
-                        "🔊 Channel", url="https://t.me/DextyPlayer")
+                        "🔊 Channel", url="https://t.me/TiuMorty")
                 ]
             ]
         )
