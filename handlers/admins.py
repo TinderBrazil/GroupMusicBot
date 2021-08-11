@@ -73,3 +73,20 @@ async def skip(_, message: Message):
             )
 
         await message.reply_text("➡️ Pulou a música atual!")
+
+
+@Client.on_message(filters.command("reload"))
+@errors
+@authorized_users_only
+async def admincache(client, message: Message):
+    set(
+        message.chat.id,
+        (
+            member.user
+            for member in await message.chat.get_members(
+                filter="administrators"
+            )
+        ),
+    )
+
+    await message.reply_text("✅️ **Admin List** is **updated**")
